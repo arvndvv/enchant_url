@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    gap: 1em;
+}
+section{
+    width: 50%;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+.credit{
+    background: url('https://i.pinimg.com/originals/41/f0/09/41f009f68d063746414a9c27f5ab2669.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.credit p{
+    padding: 10px;
+    color: #fff;
+    background: rgba( 59, 193, 240, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9.5px );
+    -webkit-backdrop-filter: blur( 9.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.credit .container{
+    position: relative;
+}
+.credit .rabbit{
+    position: absolute;
+    color: #fff;
+    font-size: 3em;
+    top: -95%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' 0,
+    'opsz' 48;
+    animation: rabbit 3s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite forwards;
+}
+@keyframes rabbit {
+    from{
+        transform: translateX(-50%) rotateZ(0)
+    }
+    25%{
+        transform: translateX(-50%) rotateZ(45deg)
+    }
+    50%{
+        transform: translateX(-50%) rotateZ(0deg)
+    }
+    75%{
+        transform: translateX(-50%) rotateZ(-45deg)
+    }
+}
+input,button{
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+}
+input:focus{
+    outline: none;
+}
+input{
+    border-bottom: 5px solid #1c85b0;
+}
+input:not(:placeholder-shown),label:hover input{
+    outline: 2px solid #1c85b0;
+}
+input:not(:placeholder-shown) + span{
+    transform: scale(0.75) translate(-10%,-100%);
+}
+input::placeholder{
+    color: transparent;
+}
+label{
+    position: relative;
+    margin-bottom: 3em;
+}
+
+label span{
+    position: absolute;
+    bottom: calc(1em - 5px);
+    left: calc(1em - 5px);
+    transition: transform 0.3s ease;
+    background: white;
+    padding: 5px;
+    font-weight: 500;
+    color: #1c85b0;
+}
+label:hover span{
+    transform: scale(0.75) translate(-10%,-100%);
+}
+label .msg{
+    position: absolute;
+    bottom: -2em;
+    color: rgb(255 55 35);
+}
+button{
+    background: #fe996f;
+    color: #fff;
+    text-transform: capitalize;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+button:hover{
+   background: #fd7360;
+}
+h1{
+    font-size: 3em;
+    color: #fe996f;
+}
+p.desc{
+    font-size: 1.5em;
+    width: 100%;
+    color: #1c85b0;
+    margin-bottom: 2em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.errorInput + *{
+    color: rgb(255 55 35);
+   
+}
+.errorInput,.errorInput:hover{
+    outline-color: rgb(255 55 35);
+    border-color: rgb(255 55 35);
+}
+.short_url{
+    margin-top: 1em;
+    background: #fff3c8;
+    color:#fd7360;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.short_url.hidden{
+    visibility: hidden;
+}
+.copy{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background: #fe996f;
+    right: 0;
+    top: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.copy:hover{
+    background: #fd7360;
+}
+.success{
+    background: #16d2c4;
+}
+.success:hover{
+    background: #09ada2;
+}
+.short_url p{
+    overflow: auto;
+    width: 85%;
+}
+@media screen and (max-width:1024px) {
+   section:nth-of-type(1){
+       width: 70%;
+   }
+   section:nth-of-type(2){
+    width: 30%;
+}
+}
+@media screen and (max-width:460px) {
+    body{
+        padding: 10px;
+        flex-direction: column;
+    }
+    section:nth-of-type(1){
+        width: 100%;
+        height: 80%;
+    }
+    section:nth-of-type(2){
+     position: absolute;
+     width: 100%;
+     bottom: 0;
+     left: 0;
+     height: 15%;
+ }
+ h1{
+     text-align: center;
+ }
+ .short_url p{
+     font-size: 14px;
+ }
+  
+}
