@@ -24,13 +24,11 @@ module.exports = router =>{
         const mappedUrls = await Model.find({id:req.params.id});
         const mappedUrl = mappedUrls && mappedUrls[0];
         if(mappedUrl && mappedUrl.url){
-            console.log(mappedUrl._id,'id:');
             res.redirect(mappedUrl.url)
         }
         else{
             res.status(404).json({message:'page not found'});
         }
-        console.log(req.params.id);
     })
     router.post('/convert', async (req, res) => {
         try{
